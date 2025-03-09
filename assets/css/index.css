@@ -1,0 +1,439 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: #0a192f; /* Modern dark blue */
+    color: #ccd6f6; /* Light gray for text */
+    line-height: 1.6;
+}
+
+header {
+    background-color: #112240; /* Darker blue */
+    position: fixed;
+    width: 100%;
+    padding: 1rem 2rem;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+    text-decoration: none;
+    color: #64ffda; /* Teal accent */
+    font-size: 1.8em;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.navigation a {
+    color: #ccd6f6;
+    text-decoration: none;
+    font-size: 1.1em;
+    font-weight: 500;
+    margin-left: 2rem;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.navigation a:hover {
+    color: #64ffda; /* Teal accent */
+    transform: translateY(-3px);
+}
+
+/* Hamburger Menu */
+.hamburger {
+    display: none; /* Hidden by default */
+    font-size: 1.5em;
+    color: #ccd6f6;
+    cursor: pointer;
+    transition: color 0.3s ease;
+    position: relative;
+}
+
+.hamburger:hover {
+    color: #64ffda;
+}
+
+#close-icon {
+    display: none; /* Hide close icon by default */
+}
+
+/* Mobile Navigation */
+@media (max-width: 768px) {
+    .hamburger {
+        display: block; /* Show hamburger on small screens */
+        z-index: 1001;
+    }
+
+    .navigation {
+        position: fixed;
+        top: 0;
+        right: -100%; /* Hide navigation off-screen */
+        width: 70%;
+        height: 100vh;
+        background-color: #112240;
+        display: flex;
+        flex-direction: column; /* Stack links vertically */
+        align-items: center;
+        justify-content: center;
+        transition: right 0.3s ease;
+        z-index: 1000;
+    }
+
+    .navigation.active {
+        right: 0; /* Slide in navigation */
+    }
+
+    .navigation a {
+        margin: 1rem 0; /* Add space between links */
+        font-size: 1.2em;
+        padding: 0.5rem 0; /* Add padding for better touch targets */
+    }
+
+    /* Show close icon when navigation is active */
+    .navigation.active + .hamburger #hamburger-icon {
+        display: none;
+    }
+
+    .navigation.active + .hamburger #close-icon {
+        display: block;
+    }
+}
+
+/* Profile Section */
+.profile-picture {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin: 0 auto;
+    border: 4px solid #64ffda;
+    animation: float 3s ease-in-out infinite;
+}
+
+.profile-picture img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+.main {
+    padding: 8rem 2rem;
+    text-align: center;
+}
+
+.main h2 {
+    font-size: 2.5em;
+    color: #ccd6f6;
+}
+
+.main h2 span {
+    color: #64ffda;
+    font-size: 1.2em;
+}
+
+.main p {
+    font-size: 1.1em;
+    margin-top: 1rem;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.main-btn {
+    display: inline-block;
+    margin-top: 2rem;
+    padding: 0.8rem 2rem;
+    background-color: #64ffda;
+    color: #0a192f;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: 600;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.main-btn:hover {
+    background-color: #52d1b2;
+    transform: translateY(-5px);
+}
+
+/* Services Section */
+.title-services {
+    font-size: 2.5em;
+    color: #64ffda;
+    margin-bottom: 2rem;
+}
+
+.content {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+.card {
+    background-color: #112240;
+    width: 300px;
+    padding: 2rem;
+    border-radius: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.icon {
+    font-size: 2.5em;
+    color: #64ffda;
+    margin-bottom: 1rem;
+}
+
+.info h3 {
+    font-size: 1.5em;
+    color: #ccd6f6;
+    margin-bottom: 1rem;
+}
+
+.info p {
+    font-size: 1em;
+    color: #8892b0;
+}
+
+/* Skills Section */
+.skills {
+    padding: 6rem 2rem;
+    background-color: #0a192f;
+}
+
+.skill-card {
+    background-color: #112240;
+    width: 300px;
+    padding: 2rem;
+    border-radius: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin: 1rem;
+}
+
+.skill-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.skill-card .icon {
+    font-size: 2.5em;
+    color: #64ffda;
+    margin-bottom: 1rem;
+}
+
+.skill-card h3 {
+    font-size: 1.5em;
+    color: #ccd6f6;
+    margin-bottom: 1rem;
+}
+
+.skill-card p {
+    font-size: 1em;
+    color: #8892b0;
+}
+
+/* Courses Section */
+.courses {
+    padding: 6rem 2rem;
+    background-color: #112240;
+}
+
+.course-card {
+    background-color: #0a192f;
+    width: 300px;
+    padding: 2rem;
+    border-radius: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin: 1rem;
+}
+
+.course-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.course-card .icon {
+    font-size: 2.5em;
+    color: #64ffda;
+    margin-bottom: 1rem;
+}
+
+.course-card h3 {
+    font-size: 1.5em;
+    color: #ccd6f6;
+    margin-bottom: 1rem;
+}
+
+.course-card p {
+    font-size: 1em;
+    color: #8892b0;
+}
+
+
+/* Portfolio Section */
+.portfolio {
+    padding: 6rem 2rem;
+}
+
+.project-card {
+    background-color: #112240;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    width: 300px; /* Fixed width for project cards */
+    margin: 1rem; /* Add margin for spacing */
+}
+
+.project-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.project-image {
+    width: 100%; /* Ensure the image container takes full width */
+    height: 200px; /* Fixed height for all images */
+    overflow: hidden; /* Hide overflow to maintain aspect ratio */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #0a192f; /* Optional: Add a background color */
+}
+
+.project-image img {
+    width: 100%; /* Ensure the image fills the container */
+    height: 100%; /* Ensure the image fills the container */
+    object-fit: cover; /* Maintain aspect ratio and cover the container */
+}
+
+.project-info {
+    padding: 1.5rem;
+}
+
+.project-category {
+    font-size: 0.9em;
+    color: #64ffda;
+}
+
+.project-title {
+    font-size: 1.2em;
+    color: #ccd6f6;
+    margin-top: 0.5rem;
+}
+
+.visit {
+    color: #64ffda;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.visit:hover {
+    color: #52d1b2;
+}
+
+/* Contact Section */
+.contact {
+    padding: 6rem 2rem;
+}
+
+.contact .icon {
+    font-size: 3em;
+    color: #64ffda;
+    margin-bottom: 1rem;
+}
+
+.contact a {
+    color: #ccd6f6;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.contact a:hover {
+    color: #64ffda;
+}
+
+/* Footer */
+.footer {
+    background-color: #112240;
+    padding: 2rem;
+    text-align: center;
+}
+
+.footer-title {
+    font-size: 1.2em;
+    color: #ccd6f6;
+}
+
+.footer-title span {
+    color: #64ffda;
+}
+
+.footer .social-icons a {
+    font-size: 1.5em;
+    color: #ccd6f6;
+    margin: 0 0.5rem;
+    transition: color 0.3s ease;
+}
+
+.footer .social-icons a:hover {
+    color: #64ffda;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    header {
+        padding: 1rem;
+    }
+
+    .navigation a {
+        margin-left: 1rem;
+    }
+
+    .main {
+        padding: 6rem 1rem;
+    }
+
+    .content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .card {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .main h2 {
+        font-size: 2em;
+    }
+
+    .main p {
+        font-size: 1em;
+    }
+
+    .title-services {
+        font-size: 2em;
+    }
+}
